@@ -1,23 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { useState } from "react";
+import Heading from "./components/Heading";
+import List from "./components/List";
+import { useSelector, useDispatch } from "react-redux";
+import { itemAdded, itemClicked, itemDeleted } from "./redux/actions";
 function App() {
+  const reducer = useSelector((state) => state.reducer);
+  const dispatch = useDispatch();
+  // const todoItems = [
+  //   { id: 1000, task: "Walk the dog", done: false },
+  //   { id: 2000, task: "Water the flower", done: true },
+  // ];
+
+  // const [todoList, setTodoList] = useState(todoItems);
+  // const [text, setText] = useState("");
+
+  // const handleChange = (e) => {
+  //   e.preventDefault();
+  //   setText(e.target.value);
+  // };
+
+  // const handleAdd = () => {
+  //   if (text) {
+  //     const newToDo = {
+  //       id: Math.floor(Math.random() * 1000),
+  //       task: text,
+  //       done: false,
+  //     };
+
+  //     const newToDoList = [...todoList, newToDo];
+  //     setTodoList(newToDoList);
+  //     setText("");
+  //   }
+  // };
+  // const handleDelete = (id) => {
+  //   const newList = todoList.filter((item) => item.id !== id);
+  //   setTodoList(newList);
+  // };
+
+  // const handleClick = (id) => {
+  //   const newList = todoList.map((item) =>
+  //     item.id === id ? { ...item, done: !item.done } : item
+  //   );
+  //   setTodoList(newList);
+  // };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="main-container">
+        <div className="heading-list-container">
+          <Heading />
+          <div className="list-container">
+            <List />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
