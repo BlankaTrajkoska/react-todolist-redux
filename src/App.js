@@ -49,9 +49,7 @@ function App() {
       <div className="main-container">
         <div className="heading-list-container">
           <Heading />
-          <div className="list-container">
-            <List />
-          </div>
+          <div className="list-container">{console.log(reducer)}</div>
         </div>
       </div>
     </div>

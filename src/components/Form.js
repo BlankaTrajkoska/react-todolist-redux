@@ -1,7 +1,13 @@
 import React from "react";
 
 const Form = () => {
-  return <div>Form</div>;
+  const itemAdded = () => {};
+  return (
+    <div>
+      <input type="text" />
+      <button onClick={itemAdded}>Add</button>
+    </div>
+  );
 };
 
 export default Form;
