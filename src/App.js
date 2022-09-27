@@ -2,11 +2,12 @@ import "./App.css";
 import { useState } from "react";
 import Heading from "./components/Heading";
 import List from "./components/List";
+import Form from "./components/Form";
 import { useSelector, useDispatch } from "react-redux";
 import { itemAdded, itemClicked, itemDeleted } from "./redux/actions";
+import { selectTodoList } from "./redux/todoSlice";
+
 function App() {
-  const reducer = useSelector((state) => state.reducer);
-  const dispatch = useDispatch();
   // const todoItems = [
   //   { id: 1000, task: "Walk the dog", done: false },
   //   { id: 2000, task: "Water the flower", done: true },
@@ -49,7 +50,10 @@ function App() {
       <div className="main-container">
         <div className="heading-list-container">
           <Heading />
-          <div className="list-container">{console.log(reducer)}</div>
+
+          <List />
+
+          <Form />
         </div>
       </div>
     </div>
